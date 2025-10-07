@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مرحبًا بك</title>
+  <style>
+    body {
+      background-color: #1f0d0d;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 30px;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 8px;
+      border: none;
+      text-align: center;
+      margin-bottom: 20px;
+      width: 60%;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>أدخل اسم المتوفي من فضلك</h1>
+  <input type="text" id="userName" placeholder="اكتب الاسم هنا">
+  <button onclick="saveName()">ابدأ</button>
+
+  <script>
+    function saveName() {
+      const name = document.getElementById('userName').value.trim();
+      if (name === "") {
+        alert("من فضلك أدخل اسمك أولًا");
+        return;
+      }
+      // حفظ الاسم في التخزين المحلي
+      localStorage.setItem("userName", name);
+      // الانتقال إلى الصفحة التالية
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحة الترحيب</title>
+  <style>
+    body {
+      background-color: #2c1b3b;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 45px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 22px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      margin-top: 25px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="welcomeText"></h1>
+  <button onclick="goToAzkar()">انتقل إلى الأذكار</button>
+
+  <script>
+    const name = localStorage.getItem("userName");
+    if (!name) {
+      window.location.href = "welcome.html";
+    } else {
+      document.getElementById("welcomeText").textContent = `صدقه علي روح المتوفي ${name} 🌷`;
+    }
+
+    function goToAzkar() {
+      window.location.href = "tasbeeh.html";
+    }
+  </script>
+</body>
+</html>
